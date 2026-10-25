@@ -2,9 +2,7 @@
 
 Mathematica notebooks accompanying the review
 
-> Z. Qu and A. Ashwath, *Structures of the Basic Reproduction Number $\mathcal{R}_0$ Across Compartmental Disease Models: A Short Review*. Submitted to the *Bulletin of Mathematical Biology* (2026).
-
-Each notebook derives $\mathcal{R}_0$ for one example model in the paper using the next-generation matrix (NGM) method, so that every expression in the paper can be reproduced symbolically.
+> Z. Qu and A. Ashwath, *Structures of the Basic Reproduction Number $\mathcal{R}_0$ Across Compartmental Disease Models: A Short Review*.
 
 ## Notebooks
 
@@ -31,15 +29,6 @@ Every notebook follows the same sequence of cells:
 5. Next-generation matrix `NGM` $= FV^{-1}$.
 6. Eigenvalues of `NGM`.
 7. `R0` — the largest eigenvalue (spectral radius), simplified under positivity assumptions on the parameters.
-
-Run with **Evaluation → Evaluate Notebook**.
-
-## Conventions
-
-- **Notation follows the paper.** Parameters use Greek symbols ($\beta$, $\gamma$, $\mu$, $\sigma$, …); multi-index quantities append the index to the name (e.g. `γ1`, `γ1H`, `μfw`, `ϕ01`).
-- **Compartment names.** `E`, `I`, `N` and `D` are protected built-in symbols in Mathematica, so compartments carry an `H` suffix where needed (`SH`, `EH`, `IH`, `RH`, `NH`, `DH`). Stage indices follow the suffix (`IH1`, `IH2`, …).
-- **Finite $n$.** Models with $n$ stages, groups, or strains in the paper are coded with $n = 3$.
-- **iNTS model.** With 20 infected states, the notebook uses indexed variables (`IH1[k]`, `γ12[k]`, …, $k=1,\dots,4$) built with `Table`. Because $F$ has rank one, $\mathcal{R}_0$ is computed as the trace of the NGM, rather than from a symbolic $20\times20$ eigenvalue problem. A final cell checks the result against the weighted-sum form, Eq. (17), using the stage durations $\tau_j$ and branching probabilities $P_{jk}$ of Eq. (15), with natural death counted as an exit from each stage.
 
 ## Requirements
 
